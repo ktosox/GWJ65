@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -6, -28 )
+b = Vector2( 0, 0 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 20, 0 )
+b = Vector2( -20, 0 )
+
+[node name="Cart" type="PathFollow2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( -26, -28, -20, 0, 20, 0, 26, -28 )
+width = 3.0
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 20, 0 )
+scale = Vector2( -1, 1 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( -20, 0 )
+shape = SubResource( 1 )

@@ -4,75 +4,59 @@
 [ext_resource path="res://actors/cart.tscn" type="PackedScene" id=2]
 [ext_resource path="res://actors/tracks.tscn" type="PackedScene" id=3]
 
-[sub_resource type="Animation" id=1]
-resource_name = "New Anim"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:unit_offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.1, 8 ),
-"transitions": PoolRealArray( 1, -2, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( -147.889, 3.56359, 147.889, -3.56359, -629, -68, -96.1665, 6.36396, 96.1665, -6.36396, -436, -80, -89.3104, -18.4616, 89.3104, 18.4616, -252, -52, -41.0122, 10.6066, 41.0122, -10.6066, -26, -80, 0, 0, 0, 0, 91, -86 )
 }
 
-[sub_resource type="Animation" id=2]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:unit_offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 255.5, 7 )
 
 [node name="World" type="Node2D"]
 
 [node name="Rock" parent="." instance=ExtResource( 1 )]
-position = Vector2( 95, 146 )
+position = Vector2( 323, 235 )
 
 [node name="Rock2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 86, 127 )
+position = Vector2( 276, 224 )
 
 [node name="Rock3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 87, 164 )
+position = Vector2( 315, 253 )
 
 [node name="Rock4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 78, 145 )
+position = Vector2( 223, 242 )
 
 [node name="Rock5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 114, 107 )
+position = Vector2( 510, 209 )
 
 [node name="Rock7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 106, 125 )
+position = Vector2( 502, 227 )
 
 [node name="Rock6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 72, 104 )
+position = Vector2( 217, 201 )
 
 [node name="Rock8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, 84 )
+position = Vector2( 425, 210 )
 
 [node name="Rock9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 92, 102 )
+position = Vector2( 417, 228 )
 
 [node name="Tracks" parent="." instance=ExtResource( 3 )]
-position = Vector2( 121, 77 )
+position = Vector2( 672, 439 )
+curve = SubResource( 4 )
 
 [node name="Cart" parent="Tracks" instance=ExtResource( 2 )]
-position = Vector2( -34, 105 )
-rotation = 0.108365
-loop = false
+position = Vector2( -622.079, -72.1694 )
+rotation = -0.0243055
+h_offset = 7.02
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Tracks/Cart"]
-autoplay = "New Anim"
-"anims/New Anim" = SubResource( 1 )
-anims/RESET = SubResource( 2 )
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 91, 231 )
+points = PoolVector2Array( 36, 48, 547, 48 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 411, 278 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -28.5, 3 )
+shape = SubResource( 3 )

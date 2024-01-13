@@ -49,12 +49,27 @@ position = Vector2( 87, 164 )
 [node name="Rock4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 78, 145 )
 
+[node name="Rock5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 114, 107 )
+
+[node name="Rock7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 106, 125 )
+
+[node name="Rock6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 72, 104 )
+
+[node name="Rock8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 100, 84 )
+
+[node name="Rock9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 92, 102 )
+
 [node name="Tracks" parent="." instance=ExtResource( 3 )]
 position = Vector2( 121, 77 )
 
 [node name="Cart" parent="Tracks" instance=ExtResource( 2 )]
 position = Vector2( -34, 105 )
-rotation = 0.108363
+rotation = 0.108365
 loop = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Tracks/Cart"]
